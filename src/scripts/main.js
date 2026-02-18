@@ -15,7 +15,12 @@ const switches = document.querySelectorAll('.tree span');
 
 switches.forEach((item) => {
   item.addEventListener('click', () => {
-    item.nextElementSibling.style.display =
-      item.nextElementSibling.style.display === 'none' ? 'block' : 'none';
+    const target = item.nextElementSibling;
+
+    if (!target) {
+      return;
+    }
+
+    target.style.display = target.style.display === 'none' ? 'block' : 'none';
   });
 });
